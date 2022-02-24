@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfc0f0f9-0c41-46ef-82a3-2e7ab4322c9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Q-Learning-SuperMario.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Q-Learning-SuperMario.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cfc0f0f9-0c41-46ef-82a3-2e7ab4322c9a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635924867208</updated>
       <workItem from="1635924872534" duration="59000" />
-      <workItem from="1645692050173" duration="668000" />
+      <workItem from="1645692050173" duration="1287000" />
     </task>
     <servers />
   </component>
