@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cfc0f0f9-0c41-46ef-82a3-2e7ab4322c9a" name="Default Changelist" comment="" />
+    <list default="true" id="cfc0f0f9-0c41-46ef-82a3-2e7ab4322c9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/components/mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/components/mario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/play_mario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1635924867208</updated>
       <workItem from="1635924872534" duration="59000" />
-      <workItem from="1645692050173" duration="1287000" />
+      <workItem from="1645692050173" duration="2366000" />
     </task>
     <servers />
   </component>

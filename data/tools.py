@@ -9,28 +9,29 @@ from . import setup
 from collections import deque
 import pdb
 
-
 p_name = platform.system()
 
 keybinding = {
-    'action':pg.K_s,
-    'jump':pg.K_a,
-    'left':pg.K_LEFT,
-    'right':pg.K_RIGHT,
-    'down':pg.K_DOWN
+    'action': pg.K_s,
+    'jump': pg.K_a,
+    'left': pg.K_LEFT,
+    'right': pg.K_RIGHT,
+    'down': pg.K_DOWN
 }
+
 
 class Control(object):
     """Control class for entire project. Contains the game loop, and contains
     the event_loop which passes events to States as needed. Logic for flipping
     states is also found here."""
+
     def __init__(self, caption, env):
         self.screen = pg.display.get_surface()
         self.done = False
         self.clock = pg.time.Clock()
         self.caption = caption
         self.fps = 60
-        #self.fps = 100000
+        # self.fps = 100000
         self.show_fps = False
         self.current_time = 0.0
         self.keys = pg.key.get_pressed()
@@ -59,8 +60,6 @@ class Control(object):
         if self.state.mario.dead:
             self.ml_done = True
 
-
-
     def flip_state(self):
         previous, self.state_name = self.state_name, self.state.next
         persist = self.state.cleanup()
@@ -68,18 +67,17 @@ class Control(object):
         self.state.startup(self.current_time, persist)
         self.state.previous = previous
 
-
     def get_step(self):
-        #if p_name == "Darwin":
+        # if p_name == "Darwin":
         #    next_state = pixels3d(self.screen)
-        #else:
+        # else:
         #    next_state = array3d(setup.SCREEN)
         next_state = []
         reward = 0
         score = self.state.get_score()
         position_x = self.state.last_x_position
         if position_x > self.max_posision_x:
-            reward += (position_x - self.max_posision_x)*2
+            reward += (position_x - self.max_posision_x) * 2
             self.max_posision_x = position_x
         else:
             reward = 0
@@ -87,8 +85,8 @@ class Control(object):
         reward = reward + score
 
         # time penalty
-        #reward -= 0.1
-        #if self.keys[275] == 1:
+        # reward -= 0.1
+        # if self.keys[275] == 1:
         #    reward += 1
         '''
         if self.keys[276] == 1:
@@ -108,14 +106,12 @@ class Control(object):
         self.before_x = position_x
         '''
 
-        #if position_x < 70 and position_x != 0:
+        # if position_x < 70 and position_x != 0:
         #    self.ml_done = True
 
         return (next_state, reward, self.ml_done, self.state.clear,
                 self.max_posision_x, self.state.timeout, position_x)
 
-
-    				
     def get_discrete_state(self):
         '''
         #discrete_state = discrete_states(0,0)
@@ -156,14 +152,13 @@ class Control(object):
                 pdb.set_trace()
         '''
         discrete_reward, discrete_state = self.state.get_discretize_state()
-        #score = self.state.get_score()
-        #discrete_reward += (score/400)
-        #pdb.set_trace()
+        # score = self.state.get_score()
+        # discrete_reward += (score/400)
+        # pdb.set_trace()
         return (discrete_reward, discrete_state)
-    
 
     def event_loop(self, key):
-        #key = None
+        # key = None
         if key != None and self.keys != key:
             self.keys = key
 
@@ -184,7 +179,6 @@ class Control(object):
             self.show_fps = not self.show_fps
             if not self.show_fps:
                 pg.display.set_caption(self.caption)
-
 
     def main(self):
         """Main loop for entire program"""
@@ -231,8 +225,7 @@ class _State(object):
         pass
 
 
-
-def load_all_gfx(directory, colorkey=(255,0,255), accept=('.png', 'jpg', 'bmp')):
+def load_all_gfx(directory, colorkey=(255, 0, 255), accept=('.png', 'jpg', 'bmp')):
     graphics = {}
     for pic in os.listdir(directory):
         name, ext = os.path.splitext(pic)
@@ -243,14 +236,14 @@ def load_all_gfx(directory, colorkey=(255,0,255), accept=('.png', 'jpg', 'bmp'))
             else:
                 img = img.convert()
                 img.set_colorkey(colorkey)
-            graphics[name]=img
+            graphics[name] = img
     return graphics
 
 
 def load_all_music(directory, accept=('.wav', '.mp3', '.ogg', '.mdi')):
     songs = {}
     for song in os.listdir(directory):
-        name,ext = os.path.splitext(song)
+        name, ext = os.path.splitext(song)
         if ext.lower() in accept:
             songs[name] = os.path.join(directory, song)
     return songs
@@ -260,21 +253,10 @@ def load_all_fonts(directory, accept=('.ttf')):
     return load_all_music(directory, accept)
 
 
-def load_all_sfx(directory, accept=('.wav','.mpe','.ogg','.mdi')):
+def load_all_sfx(directory, accept=('.wav', '.mpe', '.ogg', '.mdi')):
     effects = {}
     for fx in os.listdir(directory):
         name, ext = os.path.splitext(fx)
         if ext.lower() in accept:
             effects[name] = pg.mixer.Sound(os.path.join(directory, fx))
     return effects
-
-
-
-
-
-
-
-
-
-
-
